@@ -1,5 +1,4 @@
 import sys
-from functools import cache
 from pathlib import Path
 
 import yaml
@@ -10,7 +9,6 @@ def get_config_local(filename: Path) -> dict:
         return yaml.safe_load(file)
 
 
-@cache
 def get_config() -> dict:
     try:
         script_dir = Path(__file__).resolve().parent
